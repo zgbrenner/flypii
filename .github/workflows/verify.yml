@@ -22,6 +22,28 @@ jobs:
           node-version: '22'
       - name: Numerical and validation tests
         run: npm test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser test dependencies
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Fast isolated browser harness preflight (synthetic, not full-brain evidence)
+        run: |
+          preflight="$RUNNER_TEMP/flypii-preflight"
+          mkdir -p "$preflight"
+          git archive HEAD | tar -x -C "$preflight"
+          cd "$preflight"
+          npm run test:fixture
+          FLYPII_TEST_FIXTURE=1 TRAIN_COUNT=200 npm run train
+          FLYPII_TEST_FIXTURE=1 npm run build
+          FLYPII_TEST_FIXTURE=1 npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: synthetic-preflight-not-full-brain-evidence
+          path: ${{ runner.temp }}/flypii-preflight/reports/
       - name: Fetch immutable complete graph and verify checksums
         run: npm run data
       - name: Train and benchmark on the actual full graph
@@ -30,13 +52,6 @@ jobs:
           TRAIN_COUNT: '200'
       - name: Build standalone static website
         run: npm run build
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install browser test dependencies
-        run: |
-          python -m pip install playwright==1.56.0
-          python -m playwright install --with-deps chromium
       - name: Full browser training, benchmark, privacy and responsive tests
         run: npm run test:browser
       - name: Publish verified starter model and measured results
@@ -49,6 +64,7 @@ jobs:
       - name: Preserve failure diagnostics without marking main as verified
         if: failure()
         run: |
+          [ -d reports ] || exit 0
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add reports/

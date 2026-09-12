@@ -12,8 +12,18 @@ report={'fixture':FIXTURE,'url':URL,'checks':checks,'consoleErrors':errors,'meth
 def check(name, condition=True, **detail):
     if not condition: raise AssertionError(name+': '+json.dumps(detail))
     checks.append({'name':name,'passed':True,**detail}); print('PASS '+name,flush=True)
-def snap(page): return page.evaluate('window.__flypii.snapshot')
-def idle(page): page.wait_for_function('window.__flypii && !window.__flypii.snapshot.busy',timeout=900000)
+def snap(page): return page.evaluate('() => window.__flypii.snapshot')
+def wait(page, expression, timeout=900000):
+    # wait_for_function uses in-page eval on this Playwright version, which our
+    # production CSP correctly rejects. Poll via the automation evaluator instead;
+    # do not add unsafe-eval or bypass_csp to the app or browser context.
+    deadline=time.monotonic()+timeout/1000
+    while time.monotonic()<deadline:
+        if page.evaluate('() => Boolean('+expression+')'): return
+        page.wait_for_timeout(75)
+    page.screenshot(path=str(OUT/'wait-timeout.png'),full_page=True)
+    raise TimeoutError('Condition not met: '+expression+'; status='+page.locator('#status').inner_text())
+def idle(page): wait(page,'window.__flypii && !window.__flypii.snapshot.busy')
 def analyze(page,text):
     page.locator('#text').fill(text); page.locator('#analyze').click(); idle(page)
     expect(page.locator('#result')).to_be_visible(); return snap(page)
@@ -38,14 +48,14 @@ def run():
             page=ctx.new_page(); page.on('pageerror',lambda e:errors.append(str(e)))
             page.on('console',lambda m:errors.append(m.text) if m.type=='error' else None)
             page.goto(URL)
-            page.wait_for_function('window.__flypii?.snapshot.ready || !document.querySelector("#error").hidden',timeout=180000)
+            wait(page,'window.__flypii?.snapshot.ready || !document.querySelector("#error").hidden',timeout=180000)
             check('graph and starter model load',snap(page)['ready'],error=page.locator('#error').inner_text())
             state=snap(page); report['graph']=state
             check('correct page identity','FlyPII' in page.title() and page.url==URL)
             check('primary screen is not blank',page.locator('h1').inner_text()=='Whole brain.\nSensitive data.')
             check('production graph is complete',FIXTURE or (state['neurons']==139255 and state['edges']==15091983),neurons=state['neurons'],edges=state['edges'])
             check('graph SHA matches independent Node run',state['graphSha']==reference['graphSha'])
-            page.wait_for_function('window.__flypii.snapshot.benchmarkCount === 320'); check('measured starter report loads')
+            wait(page,'window.__flypii.snapshot.benchmarkCount === 320',timeout=30000); check('measured starter report loads')
             for case in reference['parityCases']:
                 cur=analyze(page,case['text']); delta=max(abs(a-b) for a,b in zip(cur['scores'],case['scores']))
                 check('browser/Node numerical parity',delta<1e-5,text=case['text'],maxDelta=delta,latencyMs=cur['latency'])
@@ -76,7 +86,7 @@ def run():
                 page.locator('#examples-file').set_input_files(str(example)); expect(page.locator('#custom-count')).to_contain_text('2 custom'); check('JSONL import works')
                 page.locator('#custom-list button').last.click(); expect(page.locator('#custom-count')).to_contain_text('1 custom')
                 page.locator('#count').fill('200'); page.locator('#epochs').fill('2'); original=page.locator('#model-info').inner_text()
-                page.locator('#train').click(); page.wait_for_function('window.__flypii.snapshot.busy === "train"'); page.locator('#cancel').click(); idle(page)
+                page.locator('#train').click(); wait(page,'window.__flypii.snapshot.busy === "train"'); page.locator('#cancel').click(); idle(page)
                 check('cancelled training keeps previous model',page.locator('#model-info').inner_text()==original and 'Cancelled' in page.locator('#status').inner_text())
                 page.locator('#train').click(); idle(page)
                 check('full browser training completes',not page.locator('#error').is_visible() and snap(page)['customCount']==1 and '2 epochs' in page.locator('#model-info').inner_text())
@@ -90,7 +100,7 @@ def run():
                 check('incompatible model rejected transactionally',snap(page)['customCount']==1)
                 page.locator('#model-file').set_input_files(str(ROOT/'models/starter.json')); idle(page); expect(page.locator('#status')).to_contain_text('Compatible model imported')
                 check('full starter model restored',snap(page)['customCount']==0)
-                page.locator('#tab-benchmark').click(); page.locator('#run-benchmark').click(); page.wait_for_function('window.__flypii.snapshot.busy === "benchmark"'); page.locator('#cancel').click(); idle(page)
+                page.locator('#tab-benchmark').click(); page.locator('#run-benchmark').click(); wait(page,'window.__flypii.snapshot.busy === "benchmark"'); page.locator('#cancel').click(); idle(page)
                 check('benchmark cancellation safe','Cancelled' in page.locator('#status').inner_text() and snap(page)['customCount']==0)
                 page.locator('#run-benchmark').click(); idle(page)
                 check('complete browser benchmark on five models',snap(page)['benchmarkCount']==320 and page.locator('#benchmark-rows tr').count()==5)
