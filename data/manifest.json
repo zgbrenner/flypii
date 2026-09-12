@@ -1,0 +1,118 @@
+{
+  "format": "flypii-csr",
+  "version": 2,
+  "id": "flywire783-proofread-all-1plus-v2",
+  "neurons": 139255,
+  "edges": 15091983,
+  "synapses": 54492922,
+  "inputRows": 16847997,
+  "bytes": 122406960,
+  "downloadBytes": 48569326,
+  "sha256": "d1cfedd75c95c02a31e75065ab81a3373acdaa630d613537a6549d65efebf8ff",
+  "parts": [
+    {
+      "file": "connectome-000.bin.gz",
+      "bytes": 4939356,
+      "rawBytes": 8388608,
+      "sha256": "af573bc70310f26419a1afadedfeba88ef6bc2d6f1f3d1cffb32e6e8dd6c04f0"
+    },
+    {
+      "file": "connectome-001.bin.gz",
+      "bytes": 5448373,
+      "rawBytes": 8388608,
+      "sha256": "6c16a109ffff6126f9f035a95bcfe1506c6601a392a7b5c3ba6868c995dce767"
+    },
+    {
+      "file": "connectome-002.bin.gz",
+      "bytes": 5444423,
+      "rawBytes": 8388608,
+      "sha256": "be0df6e95cd4a1be30ad2781909bd6b6f2695524bc41423d26fac6e73dd2d4c4"
+    },
+    {
+      "file": "connectome-003.bin.gz",
+      "bytes": 5426821,
+      "rawBytes": 8388608,
+      "sha256": "11e689ade85674247a803357627f10d315123d945aa59154865068387d6b999c"
+    },
+    {
+      "file": "connectome-004.bin.gz",
+      "bytes": 5392785,
+      "rawBytes": 8388608,
+      "sha256": "a913ecb1424432c6949b996cf3d58ed8f891dcb90b2ba4e9f472ae54e82ec2d6"
+    },
+    {
+      "file": "connectome-005.bin.gz",
+      "bytes": 5426344,
+      "rawBytes": 8388608,
+      "sha256": "7318e5864525149d9ca85aca9563f324b54a34e47c013d4e20481d109404f746"
+    },
+    {
+      "file": "connectome-006.bin.gz",
+      "bytes": 5419547,
+      "rawBytes": 8388608,
+      "sha256": "444c08e6c5f3d1d687b35b9200291207d36ec41ecf432329681ee0a0817a0106"
+    },
+    {
+      "file": "connectome-007.bin.gz",
+      "bytes": 2903280,
+      "rawBytes": 8388608,
+      "sha256": "d062df753dc7fb817cda7c6d66b0c7f28de82a0c5c15de2ae669ec8f0ca95ca2"
+    },
+    {
+      "file": "connectome-008.bin.gz",
+      "bytes": 1239578,
+      "rawBytes": 8388608,
+      "sha256": "5fcead4d6fbfbe1550d78c61c86b59a3b32685d1a1ae7b3b3d3ebef2ca8179c9"
+    },
+    {
+      "file": "connectome-009.bin.gz",
+      "bytes": 1240986,
+      "rawBytes": 8388608,
+      "sha256": "fa86595bafd516c8af26549938afdc638e9d4122a414fe7e43c011698689a328"
+    },
+    {
+      "file": "connectome-010.bin.gz",
+      "bytes": 1236324,
+      "rawBytes": 8388608,
+      "sha256": "5bb8d5db3cad71d60c1504d88c9d23245db3ff2ac9fa404517aa2fe1a7e97c19"
+    },
+    {
+      "file": "connectome-011.bin.gz",
+      "bytes": 1242487,
+      "rawBytes": 8388608,
+      "sha256": "cde3f41f90c149a3b80a905bd41f1673ffa603e98458a6ebd4812dd3acaa2b11"
+    },
+    {
+      "file": "connectome-012.bin.gz",
+      "bytes": 1238342,
+      "rawBytes": 8388608,
+      "sha256": "694a9b27cd8d1fcae5e1b496b097fceeb2d8dd46aa11cd47030e14554d71287e"
+    },
+    {
+      "file": "connectome-013.bin.gz",
+      "bytes": 1237712,
+      "rawBytes": 8388608,
+      "sha256": "5314d2e814806954c8f05304b879d838ddb38c150af37c06ade85f81e1113dc1"
+    },
+    {
+      "file": "connectome-014.bin.gz",
+      "bytes": 732968,
+      "rawBytes": 4966448,
+      "sha256": "78dbcaa56b050c1c256911dbb110b96829e517150ec13f9501f99a16ab31426d"
+    }
+  ],
+  "source": "https://zenodo.org/records/10676866",
+  "sourceVersion": "783.0",
+  "sourceFiles": {
+    "proofread_root_ids_783.npy": {
+      "md5": "e0e6c19732fd8c7a4e39a2d170105421",
+      "sha256": "7c7b7e818e9232e5ab64793d52ba20574dbe9da3a6509fbc74193b0f259a01be"
+    },
+    "proofread_connections_783.feather": {
+      "md5": "f48f972d262323a102aed49af1396b8a",
+      "sha256": "24f960ae3e7d4f8cd30db3b62e99fb5179cc3d1e76d8c155bfb441e9737d3faf"
+    }
+  },
+  "preprocessing": "All proofread neurons retained, including isolated nodes. All positive connections retained. Counts summed across neuropils per directed neuron pair. No minimum-count filtering. No synapse sign inference.",
+  "citation": "Dorkenwald et al. Nature 634, 124-138 (2024). doi:10.1038/s41586-024-07558-y"
+}
