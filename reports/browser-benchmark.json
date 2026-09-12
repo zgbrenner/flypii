@@ -1,0 +1,896 @@
+{
+  "trainedAt": "2026-09-12T07:38:13.394Z",
+  "graphSha": "d1cfedd75c95c02a31e75065ab81a3373acdaa630d613537a6549d65efebf8ff",
+  "neurons": 139255,
+  "edges": 15091983,
+  "synapses": 54492922,
+  "datasetVersion": "synthetic-forms-v1",
+  "count": 320,
+  "threshold": 0.5,
+  "seed": 42,
+  "customCount": 0,
+  "trainingMs": 125537.684575,
+  "createdAt": "2026-09-12T07:48:05.794Z",
+  "results": [
+    {
+      "key": "fly",
+      "name": "Full fly connectome",
+      "tp": 142,
+      "tn": 101,
+      "fp": 59,
+      "fn": 18,
+      "precision": 0.7064676616915423,
+      "recall": 0.8875,
+      "f1": 0.7867036011080333,
+      "accuracy": 0.759375,
+      "support": 320,
+      "perClass": [
+        {
+          "label": "email",
+          "tp": 64,
+          "tn": 190,
+          "fp": 66,
+          "fn": 0,
+          "precision": 0.49230769230769234,
+          "recall": 1,
+          "f1": 0.6597938144329897,
+          "accuracy": 0.79375,
+          "support": 320
+        },
+        {
+          "label": "phone",
+          "tp": 85,
+          "tn": 178,
+          "fp": 46,
+          "fn": 11,
+          "precision": 0.648854961832061,
+          "recall": 0.8854166666666666,
+          "f1": 0.748898678414097,
+          "accuracy": 0.821875,
+          "support": 320
+        },
+        {
+          "label": "ssn",
+          "tp": 54,
+          "tn": 207,
+          "fp": 49,
+          "fn": 10,
+          "precision": 0.5242718446601942,
+          "recall": 0.84375,
+          "f1": 0.6467065868263473,
+          "accuracy": 0.815625,
+          "support": 320
+        }
+      ],
+      "errors": [
+        {
+          "text": "An incoming message has this line: invoice #474115",
+          "expected": false,
+          "predicted": true,
+          "score": 0.633022259182773,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [a dog sleeping beside the desk]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.926347117659854,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 900-99-1060",
+          "expected": true,
+          "predicted": false,
+          "score": 2.7799556269814756e-05,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "Review this excerpt before publishing: [build 135-34]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9763525639351688,
+          "categories": []
+        },
+        {
+          "text": "Extract from an unfamiliar form: a dog sleeping beside the desk. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9900160149274292,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"900-77-9824\" into a document.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.373166560074406,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "A reviewer highlighted \"SN-9465-4317\" for a second look.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.629660957294434,
+          "categories": []
+        },
+        {
+          "text": "Extract from an unfamiliar form: version 2.9.13. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9999824606416375,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"the next team meeting\" into a document.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9508906365607357,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [3:30 AM]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8585804804553291,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [a dog sleeping beside the desk]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.926347117659854,
+          "categories": []
+        },
+        {
+          "text": "Text found in a copied paragraph: 900-94-4890. Nothing else was included.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.028773199098398847,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "Extract from an unfamiliar form: a painting with a blue background. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9986655759578946,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 212.555.0163",
+          "expected": true,
+          "predicted": false,
+          "score": 8.845909711553289e-05,
+          "categories": [
+            "phone"
+          ]
+        },
+        {
+          "text": "This is the complete entry => build 327-59",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8664779691068493,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => SN-9560-6624",
+          "expected": false,
+          "predicted": true,
+          "score": 0.972114463881988,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: 203.0.113.185",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9948123535616059,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: invoice #817573",
+          "expected": false,
+          "predicted": true,
+          "score": 0.633022259182773,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [quantity 154 units]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9782373245938233,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => a silver watch with a black bezel",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8853329696934462,
+          "categories": []
+        }
+      ],
+      "errorCount": 77,
+      "latency": 250.86343749999725,
+      "p95Latency": 252.9000000001397
+    },
+    {
+      "key": "rewired",
+      "name": "Source-shuffled control",
+      "tp": 144,
+      "tn": 93,
+      "fp": 67,
+      "fn": 16,
+      "precision": 0.6824644549763034,
+      "recall": 0.9,
+      "f1": 0.7762803234501348,
+      "accuracy": 0.740625,
+      "support": 320,
+      "perClass": [
+        {
+          "label": "email",
+          "tp": 64,
+          "tn": 187,
+          "fp": 69,
+          "fn": 0,
+          "precision": 0.48120300751879697,
+          "recall": 1,
+          "f1": 0.649746192893401,
+          "accuracy": 0.784375,
+          "support": 320
+        },
+        {
+          "label": "phone",
+          "tp": 85,
+          "tn": 185,
+          "fp": 39,
+          "fn": 11,
+          "precision": 0.6854838709677419,
+          "recall": 0.8854166666666666,
+          "f1": 0.7727272727272726,
+          "accuracy": 0.84375,
+          "support": 320
+        },
+        {
+          "label": "ssn",
+          "tp": 54,
+          "tn": 188,
+          "fp": 68,
+          "fn": 10,
+          "precision": 0.4426229508196721,
+          "recall": 0.84375,
+          "f1": 0.5806451612903226,
+          "accuracy": 0.75625,
+          "support": 320
+        }
+      ],
+      "errors": [
+        {
+          "text": "An incoming message has this line: invoice #474115",
+          "expected": false,
+          "predicted": true,
+          "score": 0.5590861297577275,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [a dog sleeping beside the desk]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8442387071860127,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 900-99-1060",
+          "expected": true,
+          "predicted": false,
+          "score": 0.0005230721474371239,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "Review this excerpt before publishing: [build 135-34]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9734457346426085,
+          "categories": []
+        },
+        {
+          "text": "Extract from an unfamiliar form: a dog sleeping beside the desk. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9626831310732801,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"900-77-9824\" into a document.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.012631337996436844,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "A reviewer highlighted \"SN-9465-4317\" for a second look.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9921300569708582,
+          "categories": []
+        },
+        {
+          "text": "Extract from an unfamiliar form: version 2.9.13. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9999647826898724,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"the next team meeting\" into a document.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9205168331722535,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [3:30 AM]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9226878900284213,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [a dog sleeping beside the desk]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8442387071860127,
+          "categories": []
+        },
+        {
+          "text": "Text found in a copied paragraph: 900-94-4890. Nothing else was included.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.10193951861924454,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "Extract from an unfamiliar form: a painting with a blue background. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9994050520128279,
+          "categories": []
+        },
+        {
+          "text": "A reviewer highlighted \"203.0.113.0\" for a second look.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.7629834603390995,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 212.555.0163",
+          "expected": true,
+          "predicted": false,
+          "score": 0.0017943390143843137,
+          "categories": [
+            "phone"
+          ]
+        },
+        {
+          "text": "A reviewer highlighted \"the history of the Roman republic\" for a second look.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.6293069325093956,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => build 327-59",
+          "expected": false,
+          "predicted": true,
+          "score": 0.6163638993026984,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => SN-9560-6624",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8700485853854958,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: 203.0.113.185",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9348808250790133,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: invoice #817573",
+          "expected": false,
+          "predicted": true,
+          "score": 0.5590861297577275,
+          "categories": []
+        }
+      ],
+      "errorCount": 83,
+      "latency": 452.29468750000524,
+      "p95Latency": 456.39999999990687
+    },
+    {
+      "key": "disconnected",
+      "name": "Disconnected control",
+      "tp": 143,
+      "tn": 97,
+      "fp": 63,
+      "fn": 17,
+      "precision": 0.6941747572815534,
+      "recall": 0.89375,
+      "f1": 0.7814207650273223,
+      "accuracy": 0.75,
+      "support": 320,
+      "perClass": [
+        {
+          "label": "email",
+          "tp": 64,
+          "tn": 185,
+          "fp": 71,
+          "fn": 0,
+          "precision": 0.4740740740740741,
+          "recall": 1,
+          "f1": 0.6432160804020101,
+          "accuracy": 0.778125,
+          "support": 320
+        },
+        {
+          "label": "phone",
+          "tp": 87,
+          "tn": 183,
+          "fp": 41,
+          "fn": 9,
+          "precision": 0.6796875,
+          "recall": 0.90625,
+          "f1": 0.7767857142857143,
+          "accuracy": 0.84375,
+          "support": 320
+        },
+        {
+          "label": "ssn",
+          "tp": 54,
+          "tn": 198,
+          "fp": 58,
+          "fn": 10,
+          "precision": 0.48214285714285715,
+          "recall": 0.84375,
+          "f1": 0.6136363636363635,
+          "accuracy": 0.7875,
+          "support": 320
+        }
+      ],
+      "errors": [
+        {
+          "text": "Would you share the following in a public chat? 900-99-1060",
+          "expected": true,
+          "predicted": false,
+          "score": 0.00024251130490521856,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "Extract from an unfamiliar form: a dog sleeping beside the desk. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9773630132594167,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"900-77-9824\" into a document.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.10875740626329959,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "This is the complete entry => 6:30 AM",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8855048104014126,
+          "categories": []
+        },
+        {
+          "text": "Extract from an unfamiliar form: version 2.9.13. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9998414192144771,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"the next team meeting\" into a document.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9916071655800772,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [3:30 AM]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.5117861693997747,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => 9:30 AM",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8855048104014126,
+          "categories": []
+        },
+        {
+          "text": "Text found in a copied paragraph: 900-94-4890. Nothing else was included.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.012149206796689455,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "During the handover, someone pasted \"203.0.113.98\" into a document.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.7262024561220258,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => please update the release notes",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9025906822340187,
+          "categories": []
+        },
+        {
+          "text": "Extract from an unfamiliar form: a painting with a blue background. Please advise.",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9748373679722796,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 212.555.0163",
+          "expected": true,
+          "predicted": false,
+          "score": 0.00011363937098634212,
+          "categories": [
+            "phone"
+          ]
+        },
+        {
+          "text": "This is the complete entry => total $681.09",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9782518434844916,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => build 327-59",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9824361393784516,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => SN-9560-6624",
+          "expected": false,
+          "predicted": true,
+          "score": 0.999910632433678,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: 203.0.113.185",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9740284512585737,
+          "categories": []
+        },
+        {
+          "text": "Review this excerpt before publishing: [quantity 154 units]",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9265516851751804,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => a silver watch with a black bezel",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9986452424819908,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => the revised product roadmap",
+          "expected": false,
+          "predicted": true,
+          "score": 0.6551738715430883,
+          "categories": []
+        }
+      ],
+      "errorCount": 80,
+      "latency": 21.821562499998254,
+      "p95Latency": 22.5
+    },
+    {
+      "key": "encoder",
+      "name": "Encoder only",
+      "tp": 135,
+      "tn": 132,
+      "fp": 28,
+      "fn": 25,
+      "precision": 0.8282208588957055,
+      "recall": 0.84375,
+      "f1": 0.8359133126934984,
+      "accuracy": 0.834375,
+      "support": 320,
+      "perClass": [
+        {
+          "label": "email",
+          "tp": 64,
+          "tn": 203,
+          "fp": 53,
+          "fn": 0,
+          "precision": 0.5470085470085471,
+          "recall": 1,
+          "f1": 0.707182320441989,
+          "accuracy": 0.834375,
+          "support": 320
+        },
+        {
+          "label": "phone",
+          "tp": 83,
+          "tn": 216,
+          "fp": 8,
+          "fn": 13,
+          "precision": 0.9120879120879121,
+          "recall": 0.8645833333333334,
+          "f1": 0.8877005347593583,
+          "accuracy": 0.934375,
+          "support": 320
+        },
+        {
+          "label": "ssn",
+          "tp": 44,
+          "tn": 250,
+          "fp": 6,
+          "fn": 20,
+          "precision": 0.88,
+          "recall": 0.6875,
+          "f1": 0.7719298245614036,
+          "accuracy": 0.91875,
+          "support": 320
+        }
+      ],
+      "errors": [
+        {
+          "text": "An incoming message has this line: invoice #474115",
+          "expected": false,
+          "predicted": true,
+          "score": 0.6494806671716431,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 900-99-1060",
+          "expected": true,
+          "predicted": false,
+          "score": 0.38240957897961414,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "During the handover, someone pasted \"900-77-9824\" into a document.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.4754159042738459,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "This is the complete entry => 6:30 AM",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9941944342409759,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => 9:30 AM",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9941944342409759,
+          "categories": []
+        },
+        {
+          "text": "Text found in a copied paragraph: 900-94-4890. Nothing else was included.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.3184648236614381,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "This is the complete entry => please update the release notes",
+          "expected": false,
+          "predicted": true,
+          "score": 0.8757415536568173,
+          "categories": []
+        },
+        {
+          "text": "Would you share the following in a public chat? 212.555.0163",
+          "expected": true,
+          "predicted": false,
+          "score": 0.3339374603986466,
+          "categories": [
+            "phone"
+          ]
+        },
+        {
+          "text": "This is the complete entry => total $681.09",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9976240842273351,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => build 327-59",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9957367860292974,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => SN-9560-6624",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9982754035704481,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: 203.0.113.185",
+          "expected": false,
+          "predicted": true,
+          "score": 0.693774633882613,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: version 3.18.3",
+          "expected": false,
+          "predicted": true,
+          "score": 0.7154512356441997,
+          "categories": []
+        },
+        {
+          "text": "An incoming message has this line: invoice #817573",
+          "expected": false,
+          "predicted": true,
+          "score": 0.6494806671716431,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => a silver watch with a black bezel",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9890222091495533,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => the revised product roadmap",
+          "expected": false,
+          "predicted": true,
+          "score": 0.7827777176862075,
+          "categories": []
+        },
+        {
+          "text": "A reviewer highlighted \"900-79-2001\" for a second look.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.002680263901311189,
+          "categories": [
+            "ssn"
+          ]
+        },
+        {
+          "text": "This is the complete entry => quantity 60 units",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9951195521985307,
+          "categories": []
+        },
+        {
+          "text": "This is the complete entry => www.example.com/page-32",
+          "expected": false,
+          "predicted": true,
+          "score": 0.9758984171372947,
+          "categories": []
+        },
+        {
+          "text": "During the handover, someone pasted \"858-555-0169\" into a document.",
+          "expected": true,
+          "predicted": false,
+          "score": 0.22559926441298697,
+          "categories": [
+            "phone"
+          ]
+        }
+      ],
+      "errorCount": 53,
+      "latency": 0.051250000002619346,
+      "p95Latency": 0.10000000009313226
+    },
+    {
+      "key": "regex",
+      "name": "Regex baseline",
+      "tp": 160,
+      "tn": 160,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "accuracy": 1,
+      "support": 320,
+      "perClass": [
+        {
+          "label": "email",
+          "tp": 64,
+          "tn": 256,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "accuracy": 1,
+          "support": 320
+        },
+        {
+          "label": "phone",
+          "tp": 96,
+          "tn": 224,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "accuracy": 1,
+          "support": 320
+        },
+        {
+          "label": "ssn",
+          "tp": 64,
+          "tn": 256,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1,
+          "accuracy": 1,
+          "support": 320
+        }
+      ],
+      "errors": [],
+      "errorCount": 0,
+      "latency": 0.007187500000145519,
+      "p95Latency": 0.09999999986030161
+    }
+  ],
+  "limitations": "Synthetic English development holdout, not blind external evaluation. Uncalibrated text-level pattern scores. Not verified PII, entity spans, or production privacy protection.",
+  "environment": {
+    "runtime": "Browser",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36"
+  }
+}

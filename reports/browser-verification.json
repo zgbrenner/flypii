@@ -1,0 +1,219 @@
+{
+  "fixture": false,
+  "url": "http://127.0.0.1:4173/",
+  "checks": [
+    {
+      "name": "graph and starter model load",
+      "passed": true,
+      "error": ""
+    },
+    {
+      "name": "correct page identity",
+      "passed": true
+    },
+    {
+      "name": "primary screen is not blank",
+      "passed": true
+    },
+    {
+      "name": "production graph is complete",
+      "passed": true,
+      "neurons": 139255,
+      "edges": 15091983
+    },
+    {
+      "name": "graph SHA matches independent Node run",
+      "passed": true
+    },
+    {
+      "name": "measured starter report loads",
+      "passed": true
+    },
+    {
+      "name": "browser/Node numerical parity",
+      "passed": true,
+      "text": "Please write to case7@example.com before Friday.",
+      "maxDelta": 0.0,
+      "latencyMs": 292
+    },
+    {
+      "name": "browser/Node numerical parity",
+      "passed": true,
+      "text": "Call (619) 555-0123 tomorrow.",
+      "maxDelta": 0.0,
+      "latencyMs": 271.9000000001397
+    },
+    {
+      "name": "browser/Node numerical parity",
+      "passed": true,
+      "text": "Synthetic identifier: 900-12-3456.",
+      "maxDelta": 0.0,
+      "latencyMs": 1085
+    },
+    {
+      "name": "browser/Node numerical parity",
+      "passed": true,
+      "text": "A silver watch is beside a sleeping dog.",
+      "maxDelta": 0.0,
+      "latencyMs": 244.39999999990687
+    },
+    {
+      "name": "all nodes and edges computed",
+      "passed": true,
+      "nodeUpdates": 835530,
+      "edgeVisits": 90551898
+    },
+    {
+      "name": "visualization has a pixel for every neuron",
+      "passed": true
+    },
+    {
+      "name": "keyboard neuron inspection and reduced-motion replay",
+      "passed": true
+    },
+    {
+      "name": "threshold changes verdict",
+      "passed": true
+    },
+    {
+      "name": "mode change clears stale result",
+      "passed": true
+    },
+    {
+      "name": "encoder mode does not fake neural computation",
+      "passed": true
+    },
+    {
+      "name": "empty input rejected",
+      "passed": true
+    },
+    {
+      "name": "oversize input not silently truncated",
+      "passed": true
+    },
+    {
+      "name": "keyboard tab navigation",
+      "passed": true
+    },
+    {
+      "name": "custom labeled example added",
+      "passed": true
+    },
+    {
+      "name": "JSONL import works",
+      "passed": true
+    },
+    {
+      "name": "cancelled training keeps previous model",
+      "passed": true
+    },
+    {
+      "name": "full browser training completes",
+      "passed": true
+    },
+    {
+      "name": "training invalidates old benchmark",
+      "passed": true
+    },
+    {
+      "name": "export is bound to graph",
+      "passed": true
+    },
+    {
+      "name": "export omits raw text",
+      "passed": true
+    },
+    {
+      "name": "incompatible model rejected transactionally",
+      "passed": true
+    },
+    {
+      "name": "full starter model restored",
+      "passed": true
+    },
+    {
+      "name": "benchmark cancellation safe",
+      "passed": true
+    },
+    {
+      "name": "complete browser benchmark on five models",
+      "passed": true
+    },
+    {
+      "name": "browser and Node confusion counts match",
+      "passed": true
+    },
+    {
+      "name": "error inspector responds",
+      "passed": true
+    },
+    {
+      "name": "mobile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile-sized full inference",
+      "passed": true
+    },
+    {
+      "name": "mobile training has no overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile benchmark has no overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile method has no overflow",
+      "passed": true
+    },
+    {
+      "name": "noncommercial data terms visible",
+      "passed": true
+    },
+    {
+      "name": "text never sent to server",
+      "passed": true,
+      "requests": 36
+    },
+    {
+      "name": "no unhandled browser errors",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "consoleErrors": [],
+  "method": "Playwright Chromium; Browser plugin not available",
+  "testedCommit": "ee4247d04f0b4d1dbc9643d2d77ac127db64f884",
+  "browser": "152.0.7977.0",
+  "graph": {
+    "ready": true,
+    "busy": null,
+    "graphSha": "d1cfedd75c95c02a31e75065ab81a3373acdaa630d613537a6549d65efebf8ff",
+    "neurons": 139255,
+    "edges": 15091983,
+    "seed": 42,
+    "customCount": 0,
+    "score": null,
+    "scores": null,
+    "latency": null,
+    "traceLength": null,
+    "finalLength": null,
+    "nodeUpdates": null,
+    "edgeUpdates": null,
+    "benchmarkCount": 320
+  },
+  "passed": true,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1050
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "runtimeSeconds": 395.3574899920002,
+  "realDeviceTesting": false
+}
