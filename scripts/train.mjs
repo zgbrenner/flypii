@@ -1,0 +1,15 @@
+import {mkdir,writeFile} from 'node:fs/promises';import os from 'node:os';
+import {nodeGraph} from './node-graph.mjs';import {createNetwork,response,STEPS} from '../src/engine/network.mjs';import {trainExperiment,benchmark,makePredictor} from '../src/engine/experiment.mjs';import {encodeText} from '../src/engine/features.mjs';
+const graph=await nodeGraph(process.env.FLYPII_TEST_FIXTURE==='1'),network=createNetwork(graph,42);
+const config={count:Number(process.env.TRAIN_COUNT||400),epochs:32,seed:42};let last='';
+const progress=p=>{const s=p.phase+':'+(p.model||'')+':'+Math.floor(10*(p.done||p.epoch)/(p.total||p.epochs));if(s!==last){last=s;console.log(JSON.stringify(p));}};
+const start=performance.now(),bundle=await trainExperiment(network,config,progress);const report=await benchmark(network,bundle,.5,progress);
+const predict=makePredictor(network,bundle),text='Please write to case7@example.com before Friday.',result=predict(text,'fly',true),disconnected=predict(text,'disconnected',true);
+if(result.final.length!==graph.n||result.nodeUpdates!==graph.n*STEPS||result.edgeUpdates!==graph.m*STEPS||result.trace.length!==STEPS)throw Error('Full-node/full-edge coverage failed');
+let difference=0;for(let i=0;i<graph.n;i++)difference+=Math.abs(result.final[i]-disconnected.final[i]);if(difference===0)throw Error('Connectivity ablation has no effect');
+const cases=['Please write to case7@example.com before Friday.','Call (619) 555-0123 tomorrow.','Synthetic identifier: 900-12-3456.','A silver watch is beside a sleeping dog.'];
+report.environment={runtime:'Node.js '+process.version,platform:os.platform(),cpu:os.cpus()[0]?.model,logicalCpus:os.cpus().length};
+report.coverage={nodeUpdates:result.nodeUpdates,edgeVisits:result.edgeUpdates,traceFrames:result.trace.length,neuronsPerFrame:result.final.length,connectivityAblationL1:difference};
+report.parityCases=cases.map(text=>({text,scores:predict(text,'fly').scores}));report.elapsedMs=performance.now()-start;
+await mkdir('models',{recursive:true});await mkdir('reports',{recursive:true});await writeFile('models/starter.json',JSON.stringify(bundle));await writeFile('reports/full-benchmark.json',JSON.stringify(report,null,2));
+console.log(JSON.stringify({neurons:graph.n,edges:graph.m,synapses:graph.synapses,coverage:report.coverage,results:report.results.map(({key,f1,precision,recall,latency})=>({key,f1,precision,recall,latency})),elapsedMs:report.elapsedMs},null,2));

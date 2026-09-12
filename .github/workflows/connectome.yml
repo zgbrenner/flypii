@@ -1,9 +1,6 @@
 name: Prepare full FlyWire connectome
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['scripts/prepare_data.py', '.github/workflows/connectome.yml']
 permissions:
   contents: write
 concurrency:
@@ -31,7 +28,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout --orphan connectome-data
           git rm -rf --cached .
-          git add data/
+          git add -f data/
           git commit -m 'data: complete unthresholded FlyWire v783 proofread connectome'
           git push origin HEAD:connectome-data
       - uses: actions/upload-artifact@v4

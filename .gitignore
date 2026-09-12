@@ -1,0 +1,6 @@
+.cache/
+node_modules/
+__pycache__/
+data/*.gz
+data/manifest.json
+dist/

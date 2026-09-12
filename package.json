@@ -1,0 +1,12 @@
+{
+  "name": "flypii", "version": "0.2.0", "private": true, "type": "module",
+  "description": "Full adult FlyWire connectome PII-pattern research in a browser worker.",
+  "scripts": {
+    "start": "node scripts/serve.mjs", "dev": "node scripts/serve.mjs",
+    "data": "node scripts/fetch-data.mjs", "train": "node scripts/train.mjs",
+    "build": "node scripts/build.mjs", "test": "node --test tests/*.test.mjs",
+    "test:browser": "python tests/browser.py", "test:fixture": "node scripts/test-fixture.mjs",
+    "setup": "npm run data"
+  },
+  "engines": {"node": ">=22"}, "license": "MIT"
+}
